@@ -23,8 +23,22 @@ class Square extends React.Component {
   }
   
   class Board extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+          squares: Array(9).fill(null)
+        };
+    }
+
+
     renderSquare(i) {
-      return <Square value = {i} />;
+      /**
+       * 为了提高可读性，我们把返回的 React 元素拆分成了多行，
+       * 同时在最外层加了小括号，这样 JavaScript 解析的时候就不会在 return 的后面自动插入一个分号从而破坏代码结构了。
+       */
+      return  (<Square value = {this.state.squares[i]} 
+      onClick= { ()=>this.handleClick(i)}/>
+      );
     }
   
     render() {
