@@ -30,10 +30,7 @@ function Square(props) {
     </button>
   );
 }
-  
   class Board extends React.Component {
-
-
     renderSquare(i) {
       /**
        * 为了提高可读性，我们把返回的 React 元素拆分成了多行，
@@ -43,7 +40,6 @@ function Square(props) {
       onClick= { ()=>this.props.onClick(i)}/>
       );
     }
-  
     render() {
       return (
         <div>
@@ -121,7 +117,6 @@ function Square(props) {
         );
       });  
 
-
       let status;
       if (winner) {
         status = 'Winner: ' + winner;
@@ -172,9 +167,7 @@ function Square(props) {
     return null;
   }
 
-  
   // ========================================
-  
   ReactDOM.render(
     <Game />,
     document.getElementById('root')
